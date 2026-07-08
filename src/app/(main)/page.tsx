@@ -5,6 +5,8 @@ import Testimonials from "@/components/home/testimonials";
 import GalleryPreview from "@/components/home/gallery-preview";
 import MapContact from "@/components/home/map-contact";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <>
