@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "MAAJ Furniture Mart showroom aur products ki photos dekhein.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function GalleryPage() {
   const images = await prisma.galleryImage.findMany({
     where: { isActive: true },
