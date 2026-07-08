@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "MAAJ Furniture Mart se contact karein - Narol, Sarkhej Narol Highway, Ahmedabad. Call, WhatsApp, ya message bhejein.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function ContactPage() {
   const settings = await prisma.siteSettings.findUnique({ where: { id: "1" } });
 
