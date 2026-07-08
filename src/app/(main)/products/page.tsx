@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "Browse our complete collection of premium furniture — sofa, bed, dining, office aur bahut kuch.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function ProductsPage({
   searchParams,
 }: {
