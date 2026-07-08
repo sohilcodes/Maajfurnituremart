@@ -5,6 +5,8 @@ import ProductGallery from "@/components/products/product-gallery";
 import ProductInfo from "@/components/products/product-info";
 import RelatedProducts from "@/components/products/related-products";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {
