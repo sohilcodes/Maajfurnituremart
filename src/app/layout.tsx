@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import AnalyticsTracker from "@/components/analytics-tracker";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -56,6 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
       <body className="antialiased bg-background text-white">
+        <AnalyticsTracker />
         {children}
         <Toaster theme="dark" position="top-center" richColors />
       </body>
