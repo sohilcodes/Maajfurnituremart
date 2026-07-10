@@ -3,6 +3,7 @@ import { Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import AnalyticsTracker from "@/components/analytics-tracker";
+import StructuredData from "@/components/structured-data";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -20,28 +21,31 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: {
-    default: "MAAJ Furniture Mart | Luxury Furniture in Narol, Ahmedabad",
+    default: "MAAJ Furniture Mart | Best Furniture Shop Near Narol, Ahmedabad",
     template: "%s | MAAJ Furniture Mart",
   },
   description:
-    "MAAJ Furniture Mart - Premium quality sofas, beds, dining sets, wardrobes aur office furniture. Narol, Sarkhej Narol Highway pe visit karein.",
+    "Ahmedabad ka trusted furniture showroom - Narol, Sarkhej Narol Highway. Sofa, bed, dining, wardrobe, office furniture best price mein. Furniture shop near me, furniture Ahmedabad, sofa Narol.",
   keywords: [
-    "furniture Ahmedabad",
-    "sofa Narol",
+    "furniture near me",
+    "furniture shop Ahmedabad",
+    "sofa shop Narol",
+    "furniture store Sarkhej Narol Highway",
     "MAAJ Furniture Mart",
-    "wooden furniture",
-    "luxury furniture showroom",
+    "wooden furniture Ahmedabad",
+    "luxury furniture showroom Ahmedabad",
+    "bed dining furniture Ahmedabad",
   ],
   openGraph: {
-    title: "MAAJ Furniture Mart | Luxury Furniture",
-    description: "Premium quality furniture showroom in Narol, Ahmedabad",
+    title: "MAAJ Furniture Mart | Furniture Shop Near Narol, Ahmedabad",
+    description: "Ahmedabad ka trusted furniture showroom - best price guarantee ke saath",
     type: "website",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
     title: "MAAJ Furniture Mart",
-    description: "Premium quality furniture showroom in Narol, Ahmedabad",
+    description: "Furniture shop near Narol, Ahmedabad",
   },
   robots: {
     index: true,
@@ -57,6 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
       <body className="antialiased bg-background text-white">
+        <StructuredData />
         <AnalyticsTracker />
         {children}
         <Toaster theme="dark" position="top-center" richColors />
