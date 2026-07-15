@@ -39,13 +39,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MAAJ Furniture Mart | Furniture Shop Near Narol, Ahmedabad",
     description: "Ahmedabad ka trusted furniture showroom - best price guarantee ke saath",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+    siteName: "MAAJ Furniture Mart",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "MAAJ Furniture Mart - Premium Wooden Furniture Showroom",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "MAAJ Furniture Mart",
     description: "Furniture shop near Narol, Ahmedabad",
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
