@@ -23,6 +23,22 @@ export async function generateMetadata({
     openGraph: {
       title: product.name,
       description: product.description.slice(0, 160),
+      type: "website",
+      images: product.images?.[0]
+        ? [
+            {
+              url: product.images[0],
+              width: 1200,
+              height: 630,
+              alt: product.name,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description: product.description.slice(0, 160),
       images: product.images?.[0] ? [product.images[0]] : [],
     },
   };
@@ -34,7 +50,6 @@ export default async function ProductDetailsPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
   const product = await prisma.product.findUnique({
     where: { slug, isActive: true },
     include: { category: true },
@@ -58,7 +73,6 @@ export default async function ProductDetailsPage({
         <ProductGallery images={product.images} name={product.name} />
         <ProductInfo product={product} />
       </div>
-
       {relatedProducts.length > 0 && (
         <div className="mt-24">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-10">
