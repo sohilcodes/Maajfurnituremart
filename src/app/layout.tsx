@@ -19,7 +19,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://maajfurnituremart.vercel.app"),
   title: {
     default: "MAAJ Furniture Mart | Best Furniture Shop Near Narol, Ahmedabad",
     template: "%s | MAAJ Furniture Mart",
